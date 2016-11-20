@@ -1,0 +1,10 @@
+	<div class="card">
+		<div class="card-header">
+			<%= task.importance %> | <%= task.t_type %>
+		</div>
+		<div class="card-block">
+			<h4 class="card-title"><%= task.title %></h4>
+			<p class="card-text"><%= task.body %></p>
+			<%= link_to 'Marcar como Abierto', task_path(id: task.id, 'task[as_rememberable]'=> false), method: :put, remote:true %>
+		</div>
+	</div>

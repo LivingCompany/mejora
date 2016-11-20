@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @task.body %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @task.importance %>
+</p>
+
+<p>
+  <strong>As rememberable:</strong>
+  <%= @task.as_rememberable %>
+</p>
+
+<p>
+  <strong>Remember at:</strong>
+  <%= @task.remember_at %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @task.user %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

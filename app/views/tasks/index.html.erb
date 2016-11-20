@@ -1,0 +1,7 @@
+<div class="row">
+  <% @tasks.each do |task| %>
+  <div class="col-xs-4" id= <%= task.id %> >
+    <%= render partial:"/tasks/task", locals:{task: task} %>
+  </div>
+  <% end %>
+</div>
