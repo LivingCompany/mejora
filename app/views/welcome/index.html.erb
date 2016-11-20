@@ -1,0 +1,38 @@
+<h1>Proyectos</h1>
+<hr>
+
+<% if @projects.any? %>
+<h3>Hay algo</h3>
+<% else %>
+
+<!-- If user does'nt have any project question if want to create a new project -->
+<div class="jumbotron text-xs-center">
+	<h1 class="display-5">No tienes ningún proyecto.</h1>
+	<p class="lead">
+		Los proyectos son grupos de tareas por cumplir, las cuales te ayudan a
+		llevar un control sobre cosas importantes y valorar el desempeño que tienes 
+		en estas tareas.
+	</p>
+	<p>
+		<button class="btn btn-lg btn-primary" id="showmenu" role="button">Crear un nuevo proyecto</button>
+	</p>
+</div>
+
+<div class="menu container small-container" style="display:none;" >
+	<h5>Nuevo Proyecto</h5>
+	<hr>
+	<%= render 'projects/form', project: @project %>
+	<div id="myDiv"></div>
+</div>
+
+<% end %>
+<script>
+	$(document).ready(function() {
+		$('#showmenu').click(function() {
+			$('.menu').slideToggle("fast").focus();
+			$('html, body').animate({
+				scrollTop: $("#myDiv").offset().top
+			}, 2000);
+		});
+	});
+</script>

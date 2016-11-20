@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+<div class="sidenav-brand">
+	<p>MEJORA</p>
+</div>
+
+<div class="sidenav-header">
+	Section Header
+	<small>secondary text</small>
+</div>
+
+<% else %>
+<div class="sidenav-brand row">
+	<a href="#" class="link_box"></a>
+	<div class="col-xs-4">
+		<%= image_tag('icon-user-default.png', class:"img-circle sidenav-img") %>
+	</div>
+	<div class="col-xs-8">
+		<p>
+			<b>Invitado</b>
+		</p>
+	</div>
+</div>
+
+<% end %>
+<style>
+	.link_box{
+		width: 100%;
+		height: 100%;
+	}
+</style>

@@ -1,6 +1,25 @@
 .form-signin {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-    background: #eee;
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+	background: #eee;
+}
+body{
+	margin-top: 55px;
+}
+.container>.small-container{
+	width: 540px;
+	max-width: 100%;
+	background: #eee;
+}
+@media (min-width: 576px)
+.bd-footer {
+    text-align: left;
+}
+.bd-footer {
+    padding: 1rem;
+    margin-top: 3rem;
+    font-size: 85%;
+    text-align: center;
+    background-color: #f7f7f7;
 }

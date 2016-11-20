@@ -9,9 +9,35 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
+<header>
+	<nav class="navbar navbar-light bg-faded navbar-fixed-top">
+		<a href="javascript:;" class="toggle navbar-brand" id="sidenav-toggle">
+			<span class="fa fa-bars" aria-hidden="true"></span>
+		</a>
+	</nav>
+
+	<!-- Navigation bar -->
+	<nav class="sidenav" style="margin-top: 50px;" data-sidenav data-sidenav-toggle="#sidenav-toggle">
+		<%= render 'layouts/tabs' %>
+		<div class="sidenav-header">
+		</div>
+	</nav>
+	<!-- Navigation bar -->
+</header>
+
 <body>
 	<div class="container">
 		<%= yield %>
 	</div>
 </body>
 </html>
+<script>
+	$('[data-sidenav]').sidenav();
+</script>
+
+
+<footer class="bd-footer">
+	<div class="container">
+		<span class="text-muted">© 2016 Living Company, Inc.</span>
+	</div>
+</footer>

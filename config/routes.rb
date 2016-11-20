@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :projects
+  get 'welcome/index'
+  root 'welcome#index'
   resources :records
   resources :tasks
   resources :categories
