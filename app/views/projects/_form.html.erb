@@ -2,13 +2,14 @@
 <%= f.error_notification %>
 
 <div class="form-inputs" style="max-width: 245px;">
-	<%= f.input :title %>
+	<%= f.input :title, label:"Título" %>
 </div>
 <div class="form-inputs">
-	<%= f.input :description %>
+	<%= f.input :description, label:"Descripción" %>
 </div>
 
-<div class="form-actions">
-	<%= f.button :submit %>
+<div class="form-actions  text-xs-center">
+	<%= f.button :submit, "Crear Proyecto", class:"btn btn-success" %>
 </div>
+<br>
 <% end %>

@@ -1,8 +1,12 @@
-<h1>Proyectos</h1>
+<h3>Proyectos</h3>
 <hr>
 
 <% if @projects.any? %>
-<h3>Hay algo</h3>
+
+	<% @projects.each do |project| %>
+		<%= render partial:'/projects/project', locals:{project: project} %>
+	<% end %>
+
 <% else %>
 
 <!-- If user does'nt have any project question if want to create a new project -->
