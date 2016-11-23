@@ -17,7 +17,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create task" do
     assert_difference('Task.count') do
-      post tasks_url, params: { task: { as_rememberable: @task.as_rememberable, body: @task.body, importance: @task.importance, remember_at: @task.remember_at, title: @task.title, user_id: @task.user_id } }
+      post tasks_url, params: { task: { description: @task.description, end_task: @task.end_task, importance: @task.importance, project_id: @task.project_id, remember_me: @task.remember_me, title: @task.title } }
     end
 
     assert_redirected_to task_url(Task.last)
@@ -34,7 +34,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update task" do
-    patch task_url(@task), params: { task: { as_rememberable: @task.as_rememberable, body: @task.body, importance: @task.importance, remember_at: @task.remember_at, title: @task.title, user_id: @task.user_id } }
+    patch task_url(@task), params: { task: { description: @task.description, end_task: @task.end_task, importance: @task.importance, project_id: @task.project_id, remember_me: @task.remember_me, title: @task.title } }
     assert_redirected_to task_url(@task)
   end
 

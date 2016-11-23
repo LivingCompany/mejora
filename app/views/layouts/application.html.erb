@@ -33,19 +33,19 @@
 	<!-- Navigation bar -->
 </header>
 
-<body>
+<div class="loading">
+    <%= image_tag('preloader.gif', class:"loader") %>
+</div>
+
+<body style="margin-bottom:55px; margin-top: 55px;">
 	<div class="container">
 		<%= yield %>
 	</div>
 </body>
+<div class="footer">© 2016 Living Company, Inc.</strong>.</div>
+
 </html>
 <script>
 	$('[data-sidenav]').sidenav();
 </script>
 
-
-<footer class="bd-footer navbar-fixed-bottom">
-	<div class="container">
-		<span class="text-muted">© 2016 Living Company, Inc.</span>
-	</div>
-</footer>

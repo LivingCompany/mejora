@@ -1,0 +1,5 @@
+$('#modal_task_form').modal('hide');
+$( "#project" ).fadeOut( "slow", function() {
+	$('#project').html("<%= j render 'projects/show_project', project: @project %>").fadeIn();
+});
+

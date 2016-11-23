@@ -1,0 +1,46 @@
+<h4><%= @project.title %></h4>
+<hr>
+<% if @project.tasks.any? %>
+<div class="row">
+	<% @project.tasks.each do |task| %>
+	<div class="col-lg-4 col-sm-6 col-md-6">
+		<%= render partial:'tasks/task', locals:{task: task} %>
+	</div>
+	<% end %>
+	<div class="col-lg-4 col-sm-6 col-md-6">
+		<div class="card card-outline-primary text-xs-center">
+			<div class="card-block">
+				<a  data-toggle="modal" data-target="#modal_task_form">
+					<%= fa_icon('plus', class:"text-muted", style:"font-size:5rem;") %>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<% else %>
+<div class="jumbotron jumbotron-fluid text-xs-center">
+	<div class="container">
+		<h4 class="display-4">Sin tareas!</h4>
+		<p class="lead">Para empezar a trabajar con tu proyecto divide tus objetivos y ve registrando el progreso que realices en cada uno.</p>
+		<button class="btn btn-lg btn-primary" id="showmenu" role="button">Crea una tarea</button>	
+	</div>
+</div>
+
+<div class="menu card card-outline-secondary" style="display:none">
+	<h3>Nueva tarea</h3>
+	<hr>
+	<%= render partial:'tasks/form', locals:{projectId: @project.id} %>
+	<div id="myDiv" style="margin-bottom:55px"></div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('#showmenu, #showmenu2').click(function() {
+			$('.menu').slideToggle("fast").focus();
+			$('html, body').animate({
+				scrollTop: $("#myDiv").offset().top
+			}, 2000);
+		});
+	});
+</script>
+<% end %>

@@ -1,7 +1,37 @@
-<div class="row">
-  <% @tasks.each do |task| %>
-  <div class="col-xs-4" id= <%= task.id %> >
-    <%= render partial:"/tasks/task", locals:{task: task} %>
-  </div>
-  <% end %>
-</div>
+<p id="notice"><%= notice %></p>
+
+<h1>Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Importance</th>
+      <th>End task</th>
+      <th>Remember me</th>
+      <th>Project</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= task.description %></td>
+        <td><%= task.importance %></td>
+        <td><%= task.end_task %></td>
+        <td><%= task.remember_me %></td>
+        <td><%= task.project %></td>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>

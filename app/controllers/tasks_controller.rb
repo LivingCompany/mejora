@@ -1,11 +1,10 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks
+    @tasks = Task.all
   end
 
   # GET /tasks/1
@@ -26,9 +25,11 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
+    @project = Project.find(task_params[:project_id])
 
     respond_to do |format|
       if @task.save
+        format.js
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
@@ -47,7 +48,6 @@ class TasksController < ApplicationController
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
-        format.js
         format.html { render :edit }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
@@ -59,6 +59,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
@@ -72,6 +73,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :body, :importance, :as_rememberable, :remember_at)
+      params.require(:task).permit(:title, :description, :importance, :end_task, :remember_me, :project_id, :state)
     end
 end

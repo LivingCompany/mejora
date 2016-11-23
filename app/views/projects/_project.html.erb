@@ -8,6 +8,6 @@
     <%= link_to "Ver Proyecto", project_path(project), class:"btn btn-primary" %>
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+    <%= human_date(project.created_at) %> | <%= project.tasks.count %> Tareas
   </div>
 </div>

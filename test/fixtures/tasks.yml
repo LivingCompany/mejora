@@ -2,16 +2,16 @@
 
 one:
   title: MyString
-  body: MyText
-  importance: 
-  as_rememberable: false
-  remember_at: 2016-11-20 00:19:28
-  user: one
+  description: MyText
+  importance: 1
+  end_task: 2016-11-22 19:05:43
+  remember_me: false
+  project: one
 
 two:
   title: MyString
-  body: MyText
-  importance: 
-  as_rememberable: false
-  remember_at: 2016-11-20 00:19:28
-  user: two
+  description: MyText
+  importance: 1
+  end_task: 2016-11-22 19:05:43
+  remember_me: false
+  project: two

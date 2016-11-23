@@ -4,22 +4,30 @@
 	margin: 0 auto;
 	background: #eee;
 }
-body{
-	margin-top: 55px;
-}
-.container>.small-container{
-	width: 540px;
-	max-width: 100%;
-	background: #eee;
-}
-@media (min-width: 576px)
-.bd-footer {
-    text-align: left;
-}
-.bd-footer {
-    padding: 1rem;
-    margin-top: 3rem;
-    font-size: 85%;
-    text-align: center;
-    background-color: #f7f7f7;
-}
+
+/**
+ * Footer Styles
+ */
+
+ .footer {
+ 	position:fixed;
+ 	bottom:0;
+ 	padding: 1rem;
+ 	background-color: #efefef;
+ 	text-align: center;
+ 	left: 0;
+ 	right: 0;
+ }
+ .menu{
+ 	padding: 2%;
+ }
+ .loading{
+ 	visibility: hidden;
+ }
+ .loader{
+ 	position:absolute;
+ 	top:0; bottom:0;
+ 	left:0; right:0;
+ 	margin:auto;
+ 	z-index: 1000;
+ }

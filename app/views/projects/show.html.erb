@@ -1,19 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @project.user %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div id="project">
+	<%= render partial:'projects/modal_task_form', locals:{projectId: @project.id} %>
+	<%= render 'show_project', project: @project %>
+</div>

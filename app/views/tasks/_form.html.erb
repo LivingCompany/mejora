@@ -1,15 +1,46 @@
-<%= simple_form_for(@task) do |f| %>
-  <%= f.error_notification %>
+<% projectId ||= '' %>
 
-  <div class="form-inputs">
+<%= simple_form_for(@task, remote: true) do |f| %>
+<%= f.error_notification %>
+
+<div class="form-inputs row">
+  <div class="col-xs-3">
     <%= f.input :title %>
-    <%= f.input :body %>
-    <%= f.input :importance %>
-    <%= f.input :as_rememberable %>
-    <%= f.input :remember_at %>
   </div>
+  <div class="col-xs-8">
+    <%= f.input :description %>
+  </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+<div class="form-inputs row">
+  <div class="col-xs-3">
+    <%= f.input :importance, collection: [['Normal',1],['Medio',2],['Alta',3]], label_method: :first, value_method: :last, selected: 1 %>
   </div>
+  <div class="col-xs-8">
+    <%= f.input :end_task, as: :date_time_picker %>
+  </div>  
+
+</div> 
+
+<div class="form-inputs row">
+  <div class="col-xs-3">
+    <%= f.association :project, selected: projectId %>  
+  </div>
+  <div class="col-xs-8">
+    <%= f.input :remember_me %>
+  </div>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit,"Crear tarea" %>
+</div>
 <% end %>
+
+<script>
+  $(".form_datetime").datetimepicker({
+    format: "dd MM yyyy - hh:ii",
+    autoclose: true,
+    todayBtn: true,
+    minuteStep: 30
+  });
+</script>

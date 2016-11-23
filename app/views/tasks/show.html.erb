@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @task.body %>
+  <strong>Description:</strong>
+  <%= @task.description %>
 </p>
 
 <p>
@@ -16,18 +16,18 @@
 </p>
 
 <p>
-  <strong>As rememberable:</strong>
-  <%= @task.as_rememberable %>
+  <strong>End task:</strong>
+  <%= @task.end_task %>
 </p>
 
 <p>
-  <strong>Remember at:</strong>
-  <%= @task.remember_at %>
+  <strong>Remember me:</strong>
+  <%= @task.remember_me %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @task.user %>
+  <strong>Project:</strong>
+  <%= @task.project %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |

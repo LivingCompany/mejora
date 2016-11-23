@@ -10,6 +10,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @task = Task.new
+    @tasks = @project.tasks.order(importance: :desc)
   end
 
   # GET /projects/new
@@ -29,10 +31,12 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+        format.js
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
+        format.js
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
@@ -43,9 +47,11 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
+        format.js
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
+        format.js
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
@@ -57,6 +63,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
+      forma.js
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
