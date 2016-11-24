@@ -1,9 +1,10 @@
 <h4><%= @project.title %></h4>
 <hr>
 <% if @project.tasks.any? %>
+	<%= render partial:'projects/modal_task_form', locals:{projectId: @project.id} %>
 <div class="row">
 	<% @project.tasks.each do |task| %>
-	<div class="col-lg-4 col-sm-6 col-md-6">
+	<div class="col-lg-4 col-sm-6 col-md-6" id= <%= task.id %> >
 		<%= render partial:'tasks/task', locals:{task: task} %>
 	</div>
 	<% end %>

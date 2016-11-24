@@ -1,5 +1,5 @@
 <div class="card text-xs-center">
-	<div class="card-header bg-primary text-white">
+	<div class="card-header <%= task_color(task) %>">
 		<%= task_importance(task) %> | <%= check_state(task) %>
 	</div>
 	<div class="card-block">
@@ -18,9 +18,8 @@
 			</button>
 			<div class="dropdown-menu">
 				<h6 class="dropdown-header">Marcar tarea como:</h6>
-				<a class="dropdown-item" href="#">Completada</a>
-				<a class="dropdown-item" href="#">Aplazada</a>
-				<a class="dropdown-item" href="#">Ignorada</a>
+				<%= link_to 'Completado', task_path(id: task.id, 'task[state]'=> 'Completed'), method: :put, remote:true, class:"dropdown-item" %> 
+				<%= link_to 'Ignorado', task_path(id: task.id, 'task[state]'=> 'Ignored'), method: :put, remote:true, class:"dropdown-item" %> 
 			</div>
 		</div>
 	</div>

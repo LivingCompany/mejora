@@ -18,5 +18,25 @@ module TasksHelper
 			return "out of range"
 		end
 	end
+
+	def task_color(task)
+		if task_importance(task) == "Normal"
+			return "bg-info text-white"
+		
+		elsif task_importance(task) == "Medium"
+			return "bg-primary text-white"
+		
+		elsif task_importance(task) == "Hight"
+			return	"bg-warning text-white"
+
+		elsif task_importance(task) == "out of range"
+			return "bg-faded"
+			
+		else
+			return "bg-inverse text-white"			
+		end	
+				
+				
+	end
 	
 end

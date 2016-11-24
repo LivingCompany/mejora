@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @task = Task.new
-    @tasks = @project.tasks.order(importance: :desc)
+    @tasks = @project.tasks.all
   end
 
   # GET /projects/new

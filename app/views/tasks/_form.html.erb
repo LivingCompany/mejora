@@ -1,6 +1,6 @@
 <% projectId ||= '' %>
 
-<%= simple_form_for(@task, remote: true) do |f| %>
+<%= simple_form_for(@task, remote: true, html:{id: 'tasks_form'}) do |f| %>
 <%= f.error_notification %>
 
 <div class="form-inputs row">
@@ -32,7 +32,7 @@
 </div>
 
 <div class="form-actions">
-  <%= f.button :submit,"Crear tarea" %>
+  <%= f.button :submit,"Guardar", class:"btn-success" %>
 </div>
 <% end %>
 
