@@ -14,27 +14,31 @@
 		<a href="javascript:;" class="toggle navbar-brand" id="sidenav-toggle">
 			<span class="fa fa-bars" aria-hidden="true"></span>
 		</a>
+		<div class="center">
+			<%= link_to(image_tag('mejora-logo.gif', alt:"Nicaragua Live"), root_path, class:"navbar-brand-logo") %>
+		</div>
+
 	</nav>
 
 	<!-- Navigation bar -->
 	<nav class="sidenav" style="margin-top: 50px;" data-sidenav data-sidenav-toggle="#sidenav-toggle">
 		<%= render 'layouts/tabs' %>
-    <ul class="sidenav-menu">
-      <li>
-        <a href="/">
-          <span class="sidenav-link-icon">
-			<span class="fa fa-home" aria-hidden="true"></span>
-          </span>
-          <span class="sidenav-link-title">Inicio</span>
-        </a>
-      </li>
-    </ul>
+		<ul class="sidenav-menu">
+			<li>
+				<a href="/">
+					<span class="sidenav-link-icon">
+						<span class="fa fa-home" aria-hidden="true"></span>
+					</span>
+					<span class="sidenav-link-title">Inicio</span>
+				</a>
+			</li>
+		</ul>
 	</nav>
 	<!-- Navigation bar -->
 </header>
 
 <div class="loading">
-    <%= image_tag('preloader.gif', class:"loader") %>
+	<%= image_tag('preloader.gif', class:"loader") %>
 </div>
 
 <body style="margin-top: 55px;">
